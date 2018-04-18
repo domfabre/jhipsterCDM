@@ -1,0 +1,74 @@
+entity Nations {
+	nation String required,
+	confederation String,
+	fifa Integer,
+	cdm Integer,
+    groupe Groupes
+}
+
+entity Matchs {
+	match String required,
+	date String,
+	heure String,
+	stade String,
+	domicile Boolean,
+    phase Phases
+}
+
+entity Resultats {
+	but Integer,
+	tab Integer,
+	jaune Integer,
+	rouge Integer,
+    domicile Boolean
+}
+
+entity Joueurs {
+	joueur String required,
+    courriel String,
+    avatar String
+}
+
+entity Paris {
+	but Integer,
+    jocker Boolean,
+    point Integer
+}
+
+enum Groupes {
+	A, B, C, D, E, F, G, H
+}
+
+enum Phases {
+	J1, J2, J3, HF, QF, DF, PF, F
+}
+
+relationship OneToMany {
+	Nations{id_nation} to Resultats,
+    Matchs{id_match} to Resultats,
+    Stades{id_stade} to Matchs,
+    Joueurs{id_joueur} to Paris
+}
+
+relationship OneToOne {
+	Paris{id_paris} to Resultats
+}
+
+entity Stades {
+	stade String required,
+    ville String required,
+    capacite Integer,
+    latitude Double,
+    Longitude Double
+}
+
+// Set pagination options
+paginate Nations, Matchs, Joueurs with infinite-scroll
+paginate Resultats, Paris with pagination
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl except Resultats, Paris, Matchs
+// Set an angular suffix
+angularSuffix * with cdm
