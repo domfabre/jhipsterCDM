@@ -1,0 +1,29 @@
+
+{
+    "jhipsterCdmApp": {
+        "matchs" : {
+            "home": {
+                "title": "Matchs",
+                "createLabel": "Create a new Matchs",
+                "createOrEditLabel": "Create or edit a Matchs"
+            },
+            "created": "A new Matchs is created with identifier {{ param }}",
+            "updated": "A Matchs is updated with identifier {{ param }}",
+            "deleted": "A Matchs is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Matchs {{ id }}?"
+            },
+            "detail": {
+                "title": "Matchs"
+            },
+            "match": "Match",
+            "date": "Date",
+            "heure": "Heure",
+            "stade": "Stade",
+            "domicile": "Domicile",
+            "phase": "Phase",
+            "idmatch": "Idmatch",
+            "stades": "Stades"
+        }
+    }
+}

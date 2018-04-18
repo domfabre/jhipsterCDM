@@ -1,0 +1,54 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "idmatch",
+            "otherEntityName": "resultats",
+            "otherEntityRelationshipName": "matchs"
+        },
+        {
+            "relationshipName": "stades",
+            "otherEntityName": "stades",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "match",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "date",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "heure",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "stade",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "domicile",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "phase",
+            "fieldType": "Phases",
+            "fieldValues": "J1,J2,J3,HF,QF,DF,PF,F"
+        }
+    ],
+    "changelogDate": "20180418145847",
+    "entityTableName": "matchs",
+    "dto": "mapstruct",
+    "pagination": "infinite-scroll",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "cdm"
+}

@@ -1,0 +1,46 @@
+
+<div *ngIf="paris">
+    <h2><span jhiTranslate="jhipsterCdmApp.paris.detail.title">Paris</span> {{paris.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="jhipsterCdmApp.paris.but">But</span></dt>
+        <dd>
+            <span>{{paris.but}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterCdmApp.paris.jocker">Jocker</span></dt>
+        <dd>
+            <span>{{paris.jocker}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterCdmApp.paris.point">Point</span></dt>
+        <dd>
+            <span>{{paris.point}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterCdmApp.paris.joueurs">Joueurs</span></dt>
+        <dd>
+            <div *ngIf="paris.joueursId">
+                <a [routerLink]="['/joueurs-cdm', paris.joueursId]">{{paris.joueursId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="jhipsterCdmApp.paris.idparis">Idparis</span></dt>
+        <dd>
+            <div *ngIf="paris.idparisId">
+                <a [routerLink]="['/resultats-cdm', paris.idparisId]">{{paris.idparisId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'paris-cdm/'+ paris.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

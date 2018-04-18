@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Paris.
+    -->
+    <changeSet id="20180418145850-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="joueurs_id"
+                                 baseTableName="paris"
+                                 constraintName="fk_paris_joueurs_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="joueurs"/>
+
+        <addForeignKeyConstraint baseColumnNames="idparis_id"
+                                 baseTableName="paris"
+                                 constraintName="fk_paris_idparis_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="resultats"/>
+
+    </changeSet>
+</databaseChangeLog>

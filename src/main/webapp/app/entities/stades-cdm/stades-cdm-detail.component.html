@@ -1,0 +1,42 @@
+
+<div *ngIf="stades">
+    <h2><span jhiTranslate="jhipsterCdmApp.stades.detail.title">Stades</span> {{stades.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="jhipsterCdmApp.stades.stade">Stade</span></dt>
+        <dd>
+            <span>{{stades.stade}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterCdmApp.stades.ville">Ville</span></dt>
+        <dd>
+            <span>{{stades.ville}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterCdmApp.stades.capacite">Capacite</span></dt>
+        <dd>
+            <span>{{stades.capacite}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterCdmApp.stades.latitude">Latitude</span></dt>
+        <dd>
+            <span>{{stades.latitude}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterCdmApp.stades.longitude">Longitude</span></dt>
+        <dd>
+            <span>{{stades.longitude}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'stades-cdm/'+ stades.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

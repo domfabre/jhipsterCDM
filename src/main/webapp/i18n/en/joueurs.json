@@ -1,0 +1,25 @@
+
+{
+    "jhipsterCdmApp": {
+        "joueurs" : {
+            "home": {
+                "title": "Joueurs",
+                "createLabel": "Create a new Joueurs",
+                "createOrEditLabel": "Create or edit a Joueurs"
+            },
+            "created": "A new Joueurs is created with identifier {{ param }}",
+            "updated": "A Joueurs is updated with identifier {{ param }}",
+            "deleted": "A Joueurs is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Joueurs {{ id }}?"
+            },
+            "detail": {
+                "title": "Joueurs"
+            },
+            "joueur": "Joueur",
+            "courriel": "Courriel",
+            "avatar": "Avatar",
+            "idjoueur": "Idjoueur"
+        }
+    }
+}

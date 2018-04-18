@@ -5,6 +5,15 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180418145846_added_entity_Nations.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180418145847_added_entity_Matchs.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180418145848_added_entity_Resultats.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180418145849_added_entity_Joueurs.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180418145850_added_entity_Paris.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180418145851_added_entity_Stades.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20180418145847_added_entity_constraints_Matchs.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180418145848_added_entity_constraints_Resultats.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180418145850_added_entity_constraints_Paris.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

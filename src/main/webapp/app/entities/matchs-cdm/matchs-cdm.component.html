@@ -1,0 +1,74 @@
+<div>
+    <h2>
+        <span jhiTranslate="jhipsterCdmApp.matchs.home.title">Matchs</span>
+        <button class="btn btn-primary float-right jh-create-entity create-matchs-cdm" [routerLink]="['/', { outlets: { popup: ['matchs-cdm-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="jhipsterCdmApp.matchs.home.createLabel">
+            Create new Matchs
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="matchs">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="reset.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="match"><span jhiTranslate="jhipsterCdmApp.matchs.match">Match</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="date"><span jhiTranslate="jhipsterCdmApp.matchs.date">Date</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="heure"><span jhiTranslate="jhipsterCdmApp.matchs.heure">Heure</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="stade"><span jhiTranslate="jhipsterCdmApp.matchs.stade">Stade</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="domicile"><span jhiTranslate="jhipsterCdmApp.matchs.domicile">Domicile</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="phase"><span jhiTranslate="jhipsterCdmApp.matchs.phase">Phase</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="stadesId"><span jhiTranslate="jhipsterCdmApp.matchs.stades">Stades</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+            <tr *ngFor="let matchs of matchs ;trackBy: trackId">
+                <td><a [routerLink]="['../matchs-cdm', matchs.id ]">{{matchs.id}}</a></td>
+                <td>{{matchs.match}}</td>
+                <td>{{matchs.date}}</td>
+                <td>{{matchs.heure}}</td>
+                <td>{{matchs.stade}}</td>
+                <td>{{matchs.domicile}}</td>
+                <td jhiTranslate="{{'jhipsterCdmApp.Phases.' + matchs.phase}}">{{matchs.phase}}</td>
+                <td>
+                    <div *ngIf="matchs.stadesId">
+                        <a [routerLink]="['../stades-cdm', matchs.stadesId  ]" >{{matchs.stadesId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../matchs-cdm', matchs.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'matchs-cdm/'+ matchs.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'matchs-cdm/'+ matchs.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

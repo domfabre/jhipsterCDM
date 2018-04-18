@@ -1,0 +1,54 @@
+
+<div *ngIf="resultats">
+    <h2><span jhiTranslate="jhipsterCdmApp.resultats.detail.title">Resultats</span> {{resultats.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="jhipsterCdmApp.resultats.but">But</span></dt>
+        <dd>
+            <span>{{resultats.but}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterCdmApp.resultats.tab">Tab</span></dt>
+        <dd>
+            <span>{{resultats.tab}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterCdmApp.resultats.jaune">Jaune</span></dt>
+        <dd>
+            <span>{{resultats.jaune}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterCdmApp.resultats.rouge">Rouge</span></dt>
+        <dd>
+            <span>{{resultats.rouge}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterCdmApp.resultats.domicile">Domicile</span></dt>
+        <dd>
+            <span>{{resultats.domicile}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterCdmApp.resultats.nations">Nations</span></dt>
+        <dd>
+            <div *ngIf="resultats.nationsId">
+                <a [routerLink]="['/nations-cdm', resultats.nationsId]">{{resultats.nationsId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="jhipsterCdmApp.resultats.matchs">Matchs</span></dt>
+        <dd>
+            <div *ngIf="resultats.matchsId">
+                <a [routerLink]="['/matchs-cdm', resultats.matchsId]">{{resultats.matchsId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'resultats-cdm/'+ resultats.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

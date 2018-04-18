@@ -1,0 +1,76 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myMatchsLabel" jhiTranslate="jhipsterCdmApp.matchs.home.createOrEditLabel">Create or edit a Matchs</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!matchs.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="matchs.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhipsterCdmApp.matchs.match" for="field_match">Match</label>
+            <input type="text" class="form-control" name="match" id="field_match"
+                [(ngModel)]="matchs.match" required/>
+            <div [hidden]="!(editForm.controls.match?.dirty && editForm.controls.match?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.match?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhipsterCdmApp.matchs.date" for="field_date">Date</label>
+            <input type="text" class="form-control" name="date" id="field_date"
+                [(ngModel)]="matchs.date" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhipsterCdmApp.matchs.heure" for="field_heure">Heure</label>
+            <input type="text" class="form-control" name="heure" id="field_heure"
+                [(ngModel)]="matchs.heure" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhipsterCdmApp.matchs.stade" for="field_stade">Stade</label>
+            <input type="text" class="form-control" name="stade" id="field_stade"
+                [(ngModel)]="matchs.stade" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhipsterCdmApp.matchs.domicile" for="field_domicile">Domicile</label>
+            <input type="checkbox" class="form-control" name="domicile" id="field_domicile"
+                [(ngModel)]="matchs.domicile" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhipsterCdmApp.matchs.phase" for="field_phase">Phase</label>
+            <select class="form-control" name="phase" [(ngModel)]="matchs.phase" id="field_phase" >
+                <option value="J1">{{'jhipsterCdmApp.Phases.J1' | translate}}</option>
+                <option value="J2">{{'jhipsterCdmApp.Phases.J2' | translate}}</option>
+                <option value="J3">{{'jhipsterCdmApp.Phases.J3' | translate}}</option>
+                <option value="HF">{{'jhipsterCdmApp.Phases.HF' | translate}}</option>
+                <option value="QF">{{'jhipsterCdmApp.Phases.QF' | translate}}</option>
+                <option value="DF">{{'jhipsterCdmApp.Phases.DF' | translate}}</option>
+                <option value="PF">{{'jhipsterCdmApp.Phases.PF' | translate}}</option>
+                <option value="F">{{'jhipsterCdmApp.Phases.F' | translate}}</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhipsterCdmApp.matchs.stades" for="field_stades">Stades</label>
+            <select class="form-control" id="field_stades" name="stades" [(ngModel)]="matchs.stadesId" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="stadesOption.id" *ngFor="let stadesOption of stades; trackBy: trackStadesById">{{stadesOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

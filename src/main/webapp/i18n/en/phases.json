@@ -1,0 +1,15 @@
+{
+    "jhipsterCdmApp": {
+        "Phases" : {
+            "null": "",
+            "J1": "J1",
+            "J2": "J2",
+            "J3": "J3",
+            "HF": "HF",
+            "QF": "QF",
+            "DF": "DF",
+            "PF": "PF",
+            "F": "F"
+        }
+    }
+}

@@ -1,0 +1,44 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "idnation",
+            "otherEntityName": "resultats",
+            "otherEntityRelationshipName": "nations"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "nation",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "confederation",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fifa",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "cdm",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "groupe",
+            "fieldType": "Groupes",
+            "fieldValues": "A,B,C,D,E,F,G,H"
+        }
+    ],
+    "changelogDate": "20180418145846",
+    "entityTableName": "nations",
+    "dto": "mapstruct",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "cdm"
+}
