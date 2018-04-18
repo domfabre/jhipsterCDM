@@ -1,0 +1,27 @@
+
+{
+    "jhipsterCdmApp": {
+        "nations" : {
+            "home": {
+                "title": "Nations",
+                "createLabel": "Create a new Nations",
+                "createOrEditLabel": "Create or edit a Nations"
+            },
+            "created": "A new Nations is created with identifier {{ param }}",
+            "updated": "A Nations is updated with identifier {{ param }}",
+            "deleted": "A Nations is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Nations {{ id }}?"
+            },
+            "detail": {
+                "title": "Nations"
+            },
+            "nation": "Nation",
+            "confederation": "Confederation",
+            "fifa": "Fifa",
+            "cdm": "Cdm",
+            "groupe": "Groupe",
+            "idnation": "Idnation"
+        }
+    }
+}

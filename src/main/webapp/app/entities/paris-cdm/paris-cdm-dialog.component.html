@@ -1,0 +1,54 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myParisLabel" jhiTranslate="jhipsterCdmApp.paris.home.createOrEditLabel">Create or edit a Paris</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!paris.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="paris.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhipsterCdmApp.paris.but" for="field_but">But</label>
+            <input type="number" class="form-control" name="but" id="field_but"
+                [(ngModel)]="paris.but" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhipsterCdmApp.paris.jocker" for="field_jocker">Jocker</label>
+            <input type="checkbox" class="form-control" name="jocker" id="field_jocker"
+                [(ngModel)]="paris.jocker" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhipsterCdmApp.paris.point" for="field_point">Point</label>
+            <input type="number" class="form-control" name="point" id="field_point"
+                [(ngModel)]="paris.point" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhipsterCdmApp.paris.joueurs" for="field_joueurs">Joueurs</label>
+            <select class="form-control" id="field_joueurs" name="joueurs" [(ngModel)]="paris.joueursId" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="joueursOption.id" *ngFor="let joueursOption of joueurs; trackBy: trackJoueursById">{{joueursOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhipsterCdmApp.paris.idparis" for="field_idparis">Idparis</label>
+            <select class="form-control" id="field_idparis" name="idparis" [(ngModel)]="paris.idparisId">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="resultatsOption.id" *ngFor="let resultatsOption of idparises; trackBy: trackResultatsById">{{resultatsOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

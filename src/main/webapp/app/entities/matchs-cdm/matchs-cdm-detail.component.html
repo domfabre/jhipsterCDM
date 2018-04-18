@@ -1,0 +1,52 @@
+
+<div *ngIf="matchs">
+    <h2><span jhiTranslate="jhipsterCdmApp.matchs.detail.title">Matchs</span> {{matchs.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="jhipsterCdmApp.matchs.match">Match</span></dt>
+        <dd>
+            <span>{{matchs.match}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterCdmApp.matchs.date">Date</span></dt>
+        <dd>
+            <span>{{matchs.date}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterCdmApp.matchs.heure">Heure</span></dt>
+        <dd>
+            <span>{{matchs.heure}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterCdmApp.matchs.stade">Stade</span></dt>
+        <dd>
+            <span>{{matchs.stade}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterCdmApp.matchs.domicile">Domicile</span></dt>
+        <dd>
+            <span>{{matchs.domicile}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterCdmApp.matchs.phase">Phase</span></dt>
+        <dd>
+            <span jhiTranslate="{{'jhipsterCdmApp.Phases.' + matchs.phase}}">{{matchs.phase}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterCdmApp.matchs.stades">Stades</span></dt>
+        <dd>
+            <div *ngIf="matchs.stadesId">
+                <a [routerLink]="['/stades-cdm', matchs.stadesId]">{{matchs.stadesId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'matchs-cdm/'+ matchs.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,42 @@
+
+<div *ngIf="nations">
+    <h2><span jhiTranslate="jhipsterCdmApp.nations.detail.title">Nations</span> {{nations.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="jhipsterCdmApp.nations.nation">Nation</span></dt>
+        <dd>
+            <span>{{nations.nation}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterCdmApp.nations.confederation">Confederation</span></dt>
+        <dd>
+            <span>{{nations.confederation}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterCdmApp.nations.fifa">Fifa</span></dt>
+        <dd>
+            <span>{{nations.fifa}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterCdmApp.nations.cdm">Cdm</span></dt>
+        <dd>
+            <span>{{nations.cdm}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterCdmApp.nations.groupe">Groupe</span></dt>
+        <dd>
+            <span jhiTranslate="{{'jhipsterCdmApp.Groupes.' + nations.groupe}}">{{nations.groupe}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'nations-cdm/'+ nations.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,26 @@
+
+{
+    "jhipsterCdmApp": {
+        "paris" : {
+            "home": {
+                "title": "Parises",
+                "createLabel": "Create a new Paris",
+                "createOrEditLabel": "Create or edit a Paris"
+            },
+            "created": "A new Paris is created with identifier {{ param }}",
+            "updated": "A Paris is updated with identifier {{ param }}",
+            "deleted": "A Paris is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Paris {{ id }}?"
+            },
+            "detail": {
+                "title": "Paris"
+            },
+            "but": "But",
+            "jocker": "Jocker",
+            "point": "Point",
+            "joueurs": "Joueurs",
+            "idparis": "Idparis"
+        }
+    }
+}

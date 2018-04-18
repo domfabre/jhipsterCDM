@@ -1,0 +1,28 @@
+
+{
+    "jhipsterCdmApp": {
+        "resultats" : {
+            "home": {
+                "title": "Resultats",
+                "createLabel": "Create a new Resultats",
+                "createOrEditLabel": "Create or edit a Resultats"
+            },
+            "created": "A new Resultats is created with identifier {{ param }}",
+            "updated": "A Resultats is updated with identifier {{ param }}",
+            "deleted": "A Resultats is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Resultats {{ id }}?"
+            },
+            "detail": {
+                "title": "Resultats"
+            },
+            "but": "But",
+            "tab": "Tab",
+            "jaune": "Jaune",
+            "rouge": "Rouge",
+            "domicile": "Domicile",
+            "nations": "Nations",
+            "matchs": "Matchs"
+        }
+    }
+}

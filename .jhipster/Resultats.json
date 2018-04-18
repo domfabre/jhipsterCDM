@@ -1,0 +1,46 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "nations",
+            "otherEntityName": "nations",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "matchs",
+            "otherEntityName": "matchs",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "but",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tab",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "jaune",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "rouge",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "domicile",
+            "fieldType": "Boolean"
+        }
+    ],
+    "changelogDate": "20180418145848",
+    "entityTableName": "resultats",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "cdm"
+}

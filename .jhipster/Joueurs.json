@@ -1,0 +1,35 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "idjoueur",
+            "otherEntityName": "paris",
+            "otherEntityRelationshipName": "joueurs"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "joueur",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "courriel",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "avatar",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180418145849",
+    "entityTableName": "joueurs",
+    "dto": "mapstruct",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "cdm"
+}

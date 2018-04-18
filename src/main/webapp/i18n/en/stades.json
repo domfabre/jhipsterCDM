@@ -1,0 +1,27 @@
+
+{
+    "jhipsterCdmApp": {
+        "stades" : {
+            "home": {
+                "title": "Stades",
+                "createLabel": "Create a new Stades",
+                "createOrEditLabel": "Create or edit a Stades"
+            },
+            "created": "A new Stades is created with identifier {{ param }}",
+            "updated": "A Stades is updated with identifier {{ param }}",
+            "deleted": "A Stades is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Stades {{ id }}?"
+            },
+            "detail": {
+                "title": "Stades"
+            },
+            "stade": "Stade",
+            "ville": "Ville",
+            "capacite": "Capacite",
+            "latitude": "Latitude",
+            "longitude": "Longitude",
+            "idstade": "Idstade"
+        }
+    }
+}

@@ -1,0 +1,40 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "joueurs",
+            "otherEntityName": "joueurs",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "idparis",
+            "otherEntityName": "resultats",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "paris"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "but",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "jocker",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "point",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20180418145850",
+    "entityTableName": "paris",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "cdm"
+}
